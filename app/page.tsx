@@ -1,17 +1,8 @@
-"use client";
-
-import { useState } from "react";
+import LikeButton from "./like-button";
 
 const names = ["Ada Lovelace", "Grace Hopper", "Margaret Hamilton"];
 
 export default function Home() {
-  const [likes, setLikes] = useState(0);
-
-  function handleClick() {
-    setLikes(likes + 1);
-    // console.log('Likes:', likes)
-  }
-
   return (
     <>
       <Header title="Alex Panteli" />
@@ -23,12 +14,7 @@ export default function Home() {
         ))}
       </ul>
       <br />
-      <button
-        onClick={handleClick}
-        className="text-md rounded bg-black px-4 py-1 font-bold text-white"
-      >
-        Likes {likes}
-      </button>
+      <LikeButton />
     </>
   );
 }
